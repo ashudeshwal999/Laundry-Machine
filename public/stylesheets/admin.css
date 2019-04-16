@@ -1,0 +1,180 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  html{
+    width: 100vw;
+    height: 100vh;
+  }
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #252830;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.dw{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    border-radius: 20px;
+    
+}
+
+.side-item{
+    width: 9em;
+    height:90vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.side-item>.side-item-ul{
+    margin: 0;
+    padding: 0;
+    margin-top: 3em;
+}
+.side-item-ul>li{
+    list-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.1em; 
+    padding: 10px;
+}
+.side-item-ul>li>a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+
+}
+#dashboard-word{
+  color: rgba(255,255,255,0.8);
+    font-size:1.2em;
+    text-decoration: underline;
+    margin-top: 30px;
+}
+#logout-btn{
+    border-top: 1px solid white; 
+    
+}
+.side-window-selected{
+  background: #1997c6;;
+  border-radius: 15px;
+
+}
+
+
+
+.main{
+    height: 90vh;
+    width: 45em;
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+    border-left: 3px solid white;
+}
+
+
+
+
+/* chat css done here */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  position: fixed;
+  bottom: 23px;
+  right: 3%;
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  background: linear-gradient(to top, #1c0709, #e62823);
+  box-shadow: -3px 3px 7px 3px #1c070991;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 3%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  border-radius: 10px;
+  background: white;
+}
+
+
+.form-container {
+  max-width: 300px;
+  padding: 2px;
+  background-color: white;
+}
+
+ input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  height: 45px;
+}
+
+
+.form-container input:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  border-radius: 54px;
+}
+
+
+.cancel {
+  background-color: #ff0202;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.form-container .chat-msg{
+  overflow-y: scroll;
+  height: 150px;
+  display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.chat-head{
+  margin: 0;
+}
+.name{
+  margin: 0;
+    padding: 0;
+    text-align: center;
+    border-radius: 48px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+/*  chat css done here */

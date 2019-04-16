@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <link rel='stylesheet' href='/stylesheets/notification.css' />
+    
+  </head>
+  <body>
+    
+    <div class="dw">
+      <% include  partials/side-window %>
+    
+    <div class="main">
+        <h2>NOTIFICATION</h2>
+        <button id='send-notifcation-btn'>Add Notification </button>
+        <form action="#" class="add-notification" method="post">
+          <textarea name="notification"  ></textarea>
+          <div class="btn-box">
+          <input type="submit" id="send-btn" value="Send">
+          <button class="cancel2">X</button>
+        </div>
+        </form>
+
+            
+            <% if(notification_msg.length!=0) {   %>
+            <div class="notification-box">
+                <span id='box-heading'>Notification-Box</span>  
+                <%for(let i=0;i<notification_msg.length;i++){ %>
+                    <li >
+                        <span><%= notification_msg[i]['time'] %></span>
+                      <p><%= notification_msg[i]['info'] %> </p>
+                      
+                    </li>
+                  <% } %>
+
+            </div>   
+            
+           <% } %>
+              
+
+       
+
+    </div>
+    
+    </div>
+    
+    
+
+       
+    <script type="text/javascript" src="/javascripts/notification.js"></script>  
+  </body>
+  
+</html>

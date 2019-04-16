@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <link rel='stylesheet' href='/stylesheets/starting.css' />
+    
+</head>
+  <body>
+  
+    <div class="dw">
+      <% include  partials/side-window %>
+
+     <div class="main">
+          <h2> Starting 15</h2>
+          <form class="add-form" method="post" action='#' autocomplete="off" >
+                    <span >Add name here..</span>
+                   <div> 
+                <input class="add_name" type="text" name='name' >
+                <input class="room_no" type="number" name='room_no'>
+                <input class="add-item" type="submit" value="+"> 
+              </div>
+            </form>
+          
+            <% if(list){%>   <span id='student-list-text'> Student-list</span> <%}%>  
+
+        <div class="student-list">  
+          <% if(list){%>
+            
+           <% for(let i=0;i<list.length;i++){%>
+              <li data-index="<%=i%>">
+                <a style="font-weight: bolder; color: white"><%= list[i]['name']%></a>
+                <a style="font-weight: bolder; color: white"><%= list[i]['room_no']%></a>
+                <a  data-action="edit" style="cursor: pointer; color: white; ">Edit</a>
+                <a  data-action="remove" style="cursor: pointer; color: white;">Remove</a>
+              
+              </li>
+              
+          <% } }%>
+        </div>  
+        <input type="button" value="SAVE" id='save'>
+
+     </div>
+
+     
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>    
+        <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+    <script type="text/javascript" src="/javascripts/starting.js"></script>
+    
+  </body>
+</html>

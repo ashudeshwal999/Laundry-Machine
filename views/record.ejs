@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <link rel='stylesheet' href='/stylesheets/record.css' />
+    
+        
+  </head>
+  <body>
+    
+    <div class="dw">
+      <% include  partials/side-window %>
+    
+    <div class="main">
+      <h2>Record</h2>
+        <div class="main2">
+        <form action="#">
+        <input type="date" id="date-set" name="date" data-date-inline-picker="true" />
+        </form>
+
+          <%if(show==1){ %>
+            <h3>Search Record..</h3>
+          <%}else {%>
+          <h3><%=date%></h3>
+              <%if(data.length==0){%>
+                  <span>No Record Found!</span>
+              <%}else { %>
+              <div class="table-container">
+                 <table >
+                      <tr>
+                        <th class="heading">Name</th>
+                        <th class="heading">Room-No</th>
+                        <th class="heading">Done</th>
+                        <th class="heading">Start-Time</th>
+                      </tr>
+                    <%  for(let i=0;i<data.length;i++){ %>
+                        <tr>
+                            <td > <%= data[i]['name'] %></td>
+                            <td > <%= data[i]['room_no'] %></td>
+                            <td  <% if(data[i]['done']==true){ %>
+                              style="color:#1087ff"; 
+                              <%} else { %>
+                                style="color:red;" 
+                              <%} %>           
+                                > <%= data[i]['done'] %></td>
+                            <td > <%= data[i]['start'] %></td>
+                        </tr>
+                    <%  } %>
+     
+                   </table>
+                </div>     
+               <% }%>
+
+             <%}%>
+
+        </div>      
+        
+    </div>
+    </div>
+    
+   
+
+    <script type="text/javascript" src="/javascripts/record.js"></script>    
+       
+
+  </body>
+  
+</html>

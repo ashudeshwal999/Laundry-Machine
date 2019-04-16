@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/index2.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  
+  </head>
+  <body>
+    
+      <a href="/login" id='login'>Login</a>
+      <div class="notify-gain">
+          <form class="one-time" action="#" autocomplete="off">
+              <label >Enter your full name</label>
+              <input type="text" id='notify-name'>
+              <input type="Number" id="notify-room">
+              <input type="submit">
+            </form>
+           <span id="user-name"></span> 
+      <img src="https://img.icons8.com/color/48/000000/alarm.png">
+    </div>
+      <div class="notification-box">
+          <span id='box-heading'>Notification-Box</span>  
+          
+          <% if(notification_msg.length!=0) {   %>        
+                <%for(let i=0;i<notification_msg.length;i++){ %>
+                    <li >
+                        <span id="noti-span"><%= notification_msg[i]['time'] %></span>
+                      <p><%= notification_msg[i]['info'] %> </p>
+                      
+                    </li>
+                  <% } %>
+
+           <% } %>
+          </div> 
+      
+
+
+    <div class="main">
+
+      <%- include('partials/washing',{no:'1',list_name:list1 ,current_name:current_name.current_name1})%>
+      
+      <%- include('partials/washing',{no:'2',list_name:list2,current_name:current_name.current_name2})%>
+    
+    <%- include('partials/washing',{no:'3',list_name:list3,current_name:current_name.current_name3 })%>
+    
+  
+    </div>
+      
+    <% include partials/chat-window %>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>    
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>   
+
+   <script type="text/javascript" src="/javascripts/index.js"></script>  
+   <script type="text/javascript" src="/javascripts/index2.js"></script>  
+    
+
+
+
+
+  </body>
+</html>

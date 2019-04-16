@@ -1,0 +1,40 @@
+.account-reset{
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+}
+
+.account-reset>input {
+    border-radius: 100px;
+    width: 160px;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+    background: white;
+}
+.account-reset>label {
+    padding: 7px;
+    font-size: 1.1em;   
+    color: white;
+}
+.account-reset>input[type='submit']{
+    margin-top: 25px;
+    width: 7em;
+    background: white;
+    font-size: 15px;
+    color: #1997c6;
+    font-weight: bolder;
+}
+
+#flash-msg{
+    color: white;
+}
+#flash-msg>button{
+    border-radius: 100px;
+    background: white;
+    color: #1997c6;
+    border: none;
+}

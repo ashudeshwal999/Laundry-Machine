@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Ashu",
+    "room": "60",
+    "info": {
+      "endpoint": "https://fcm.googleapis.com/fcm/send/eV79pVZPtqU:APA91bFVEj3v71aOsDCyX8ATahrYlhPQTOMdedwvRH-L1w0f3FuikpaswF62uKERJ-g6Sqp44oKf0B-IODcAQTicKZLSRdPUPzFGW8uBAVn7t6gvp3-9ZVl72gYSnZxN-ac-_SVMe_2A",
+      "expirationTime": null,
+      "keys": {
+        "p256dh": "BDapKNjtlqIz_Z68_Zx7sEgZe6SAVZmqwaGeqyN88wfgZhfTGkH1tpJQmWMR5M_OOv412YCZmUCMZN9xEp2ZGSs",
+        "auth": "FRR58KFOfwgPpupHp1YKBQ"
+      }
+    },
+    "_id": "5cb6504cc35c8b1eac16b84e"
+  }
+]

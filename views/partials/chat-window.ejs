@@ -1,0 +1,42 @@
+
+    <button  
+    <%if(flag==1){%>
+      style="background:green;"
+    <%}%>
+    class="open-button" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+        <form class="name-block">
+            <input type="text" class="name" placeholder="Enter Your Name" >
+            <button type="submit" class="btn">Send</button>
+        </form>
+    <form  class="form-container" autocomplete="off">
+      <h2 class="chat-head">Chat</h2>
+      <div class="chat-msg">
+
+       <% for(let i=0;i<txt.length;i++){ %>
+          <div style="list-style: none; width: 80%; position: relative; word-break: break-all; margin-bottom: 5px; border-radius: 7px; right: 0px; background: rgba(0, 0, 0, 0.3);">
+              <span><strong> <%= txt[i]['msg'].split(':')[0]%>  </strong> </span>
+              <span > <%= txt[i]['msg'].split(':')[1]%> </span>
+           </div>
+           <span style="font-size: 10px; text-align: left;"><%= txt[i]['time']%> </span>
+        <%}%>
+
+  
+      </div>
+      
+      <input type="text" placeholder="Type message.." name="msg">
+      <button type="submit" class="btn send">Send</button>
+      
+    </form>
+    <button type="button" class="btn cancel"  onclick="closeForm()">Close</button>
+    
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/javascripts/chat.js"></script> 
+    
+
+   
+      

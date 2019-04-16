@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <link rel='stylesheet' href='/stylesheets/admin_main.css' />
+    
+  </head>
+  <body>
+    
+    <div class="dw">
+      <% include  partials/side-window %>
+    
+    <div class="main">
+      <h2>Dashboard</h2>
+
+      <div class="main2">
+
+      <div class="machine-timer-set">
+          <div class="box ">
+              <span id="time1" class="time">EMPTY</span>
+            </div>
+
+          <input class="set-time-machin1 controller" type="time" step='1' min="00:00:00" max="00:45:00">
+          <button class="save-btn" id="save-btn1" >Save</button>
+      </div>
+
+      <div class="machine-timer-set">
+          <div class="box ">
+              <span id="time2" class="time">EMPTY</span>
+            </div>
+
+          <input class="set-time-machin2 controller" type="time" step='1' min="00:00:00" max="00:45:00">
+          <button class="save-btn"  id="save-btn2" >Save</button>
+      </div>
+      
+      <div class="machine-timer-set">
+
+          <div class="box ">
+              <span id="time3" class="time">EMPTY</span>
+            </div>
+
+          <input class="set-time-machin3 controller" type="time" step='1' min="00:00:00" max="00:45:00">
+          <button class="save-btn" id="save-btn3" >Save</button>
+      </div>
+
+    </div>
+
+      
+
+
+      
+    </div>
+    </div>
+    
+    <% include partials/chat-admin %>
+
+    <script type="text/javascript" src="/javascripts/admin.js"></script>
+       
+
+  </body>
+  
+</html>

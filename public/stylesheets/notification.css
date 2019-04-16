@@ -1,0 +1,111 @@
+#send-notifcation-btn{
+    width: 9em;
+    margin-top: 1em;
+    height: 1.4em;
+    background: rgb(255, 255, 255);
+    border: none;
+    font-size: 18px;
+    color: #1997c6;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: bolder;
+    outline: none;
+    
+}
+h2 {
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+}
+
+form{
+    opacity: 0;
+    will-change: opacity;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    transition: all 0.25s;
+}
+textarea{
+    width: 180px;
+    height: 8em;
+    border-radius: 30px;
+    padding: 10px;
+    outline: none;
+}
+.btn-box{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    align-items: center;
+}
+#send-btn{
+    width: 4em;
+    margin: 0;
+    background: rgb(255, 255, 255);
+    font-size: 18px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: bolder;
+    outline: none;
+    color: #1997c6;
+    margin-bottom: 4px;
+}
+
+.cancel2{
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    outline: none;
+    border: none;
+    background: white;
+    color: #1997c6;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+
+    /* notifcation-box*/
+.notification-box{
+    width: 25em;
+    height: 17em;
+    border-radius: 70px;
+    position: absolute;
+    border: 1px solid white;
+    top: 50%;
+    background: transparent;
+    padding: 1.5em;
+}
+
+
+
+
+.notification-box > li{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.notification-box > li>p{
+    color: red;
+    margin: 0;
+    margin-left: 15px;
+    word-break: break-all;  
+}
+
+
+#box-heading{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bolder;
+}
+span{
+    color: white;
+}
+

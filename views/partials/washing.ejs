@@ -1,0 +1,52 @@
+
+<div class="wash-main machine<%=no%>">
+    <span data-index= "<%=no%> " class=" list">>></span>
+    <div class="student-list">
+     <%  if(list_name){  %>
+      <%  for(let i=0 ;i<list_name.length;i++ ){ %>
+          <li 
+          <%if(current_name==list_name[i]['name']){%>
+            style='background:#1997c6;'
+          <%} %>
+          <% if(list_name[i]['done']){ %>
+            style="text-decoration:line-through"
+          <% } %>
+
+          >
+            <%=list_name[i]['name']%> 
+          </li>
+       <% }%>
+     <% }%>
+        
+  
+    </div>
+         
+        <div class="wash-header">
+          <div class="wash-header-btn-grp1">
+            <div class="wash-header-btn-grp1-btn1"></div>
+            <div class="wash-header-btn-grp1-btn1"></div>
+          </div>
+          <div class="wash-header-btn-grp2">
+                <div class="wash-header-btn-gr2-grp">
+                    <div class="wash-header-btn-grp2-btn2"></div>
+                    <div class="wash-header-btn-grp2-btn2"></div>
+                </div>
+                <div class="wash-header-btn-gr2-grp">
+                    <div class="wash-header-btn-grp2-btn2"></div>
+                    <div class="wash-header-btn-grp2-btn2"></div>
+                </div>
+            </div>   
+        </div>
+        <div class="wash-body">
+            <div class="circle2">
+                <div class="circle1">
+                  <div class="wash-time">
+                    <span class='time' id="time<%=no%>">
+                      EMPTY
+                    </span>
+                  </div> 
+                </div>
+              </div>
+        </div>
+      </div>
+  

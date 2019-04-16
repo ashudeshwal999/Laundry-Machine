@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <link rel='stylesheet' href='/stylesheets/account.css' />
+    
+  </head>
+  <body>
+  
+    <div class="dw">
+      <% include  partials/side-window %>
+    
+    <div class="main">
+      
+      <h2>ACCOUNT RESET</h2>
+      <% if(message.length>0){ %>
+        <span id="flash-msg"> 
+          <%=message %>
+          <button onclick="delete_fn()">X</button> 
+        </span>
+    
+
+
+      <% } %>
+      <form action="#" method="post" class="account-reset" autocomplete="off">
+        <label for="label1">Old Admin Name</label>
+        <input type="text" name="label1" id="label1" required>
+        
+        <label for="label2">New Admin Name</label>
+        <input type="text" name="label2" id="label2" required>
+        
+        <label for="label3">Old Password</label>
+        <input type="password" name="label3" id="label3" required>
+
+        <label for="label4">New Password</label>
+        <input type="password" name="label4" id="label4" required>
+
+        <input type="submit" value="Save">
+
+      </form>
+
+
+    </div>
+
+    </div>
+   
+    
+
+    <script>
+
+     function delete_fn(){
+      var flash_msg=document.querySelector('#flash-msg');
+      flash_msg.remove();
+     }
+    
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <link rel='stylesheet' href='/stylesheets/update.css' />
+  </head>
+  <body>
+  
+    <div class="dw">
+      <% include  partials/side-window %>
+    
+    <div class="main">
+        <h2>Update-Time </h2>   
+        <div class="time-body">
+        <span class="time" id="time1">Machine-1</span>
+        <span class="time" id="time2">Machine-2</span>
+        <span class="time" id="time3">Machine-3</span>
+      </div>
+
+
+      <div class="main2">
+
+      <div class="machine1 list" id="sortable1" data-index="1">
+        <%if(machine1_name.length!=0){%>
+        
+          <%for(let i=0;i<machine1_name.length;i++){ %>
+              <li>
+                <input type="checkbox" data-index="1" data-name="<%= machine1_name[i]['name'] %> " 
+               <% if(machine1_name[i]['done']){ %>
+                  checked
+                <%}%>
+                data-no="<%=i%>"
+                >
+                <span> <%= machine1_name[i]['name']%> </span>
+              </li>
+
+         <%}%> 
+
+
+       <% }%>
+
+
+      </div>
+
+      
+      <div class="machine2 list" id="sortable2" data-index="2">
+          <%if(machine2_name.length!=0){%>
+        
+            <%for(let i=0;i<machine2_name.length;i++){ %>
+                <li >
+                  <input type="checkbox" data-index="2" data-name="<%=machine2_name[i]['name'] %> "
+                  <% if(machine2_name[i]['done']){ %>
+                    checked
+                  <%}%>
+                  data-no="<%=i%>"
+                  >
+                  <span> <%= machine2_name[i]['name']%> </span>
+                </li>
+  
+           <%}%> 
+  
+  
+         <% }%>
+  
+           
+            
+
+            
+          </div>
+
+         
+          <div class="machine3 list" id="sortable3" data-index="3">
+                
+              <%if(machine3_name.length!=0){%>
+        
+                <%for(let i=0;i<machine3_name.length;i++){ %>
+                    <li >
+                      <input type="checkbox" data-index="3" data-name= "<%=machine3_name[i]['name']%>"
+                      <% if(machine3_name[i]['done']){ %>
+                        checked
+                      <%}%>
+                      data-no="<%=i%>"
+                      >
+                      <span> <%= machine3_name[i]['name']%> </span>
+                    </li>
+      
+               <%}%> 
+      
+      
+             <% }%>
+      
+               
+
+                
+              </div>
+
+              
+            </div>
+
+        <div class="add-btns">
+          
+              <button  class="add-item">+</button>
+              <div class="hide">
+              <form class="add-form" method="post" action='/admin/update/add' autocomplete="off" >
+              <input class="add_name" type="text" name='name' required >
+              <input class="room_no" type="number" name='room' required>
+              <input class="machine_no_add" type="number" name='machine' max="3" min="1" required >
+              <input class="add-item2" type="submit" value="+"> 
+            
+              </form> 
+              </div>
+          
+          
+
+        </div>    
+
+
+
+            
+            
+
+    </div>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>    
+        <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>   
+        
+    <script src="/javascripts/jquery.ui.touch-punch.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/javascripts/update.js"></script>
+    
+
+  </body>
+</html>
