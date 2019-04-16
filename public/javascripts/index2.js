@@ -69,7 +69,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
                   
                   $.ajax({
                     type: 'GET',
-                    url: "http://localhost:3000/json/subscriber.json",
+                    url: "https://laundry-machine.herokuapp.com/json/subscriber.json",
                     success:function(data){
                      console.log(data);
               
