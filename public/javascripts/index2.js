@@ -4,6 +4,12 @@ applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
 var subscribe_obj;
 var flag=0;
 
+
+$(document).ready(function(){
+   $('#user-name').html("Hello Anon");
+ });
+
+
 var img_tag=document.querySelector('img');
 img_tag.addEventListener('click',function(e){
     if( (form_tag.style.display=='none' || form_tag.style.display=='') && flag==0 ){
@@ -78,7 +84,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
                           flag=1;
                         }  
                        });
-                       if(!flag)$('#user-name').html("Hello Anon");
+                       
                        
 
                      });
