@@ -8,7 +8,8 @@
   body{
     
     font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
-    background: linear-gradient(to right, #1d1e22, #393f4d);
+    background: linear-gradient(326deg, rgba(0,0,0,0) 47%, #000000 77%),linear-gradient(79deg, rgba(0,0,0,0) 78%, #b92828 64%);
+    background-color: rgba(0, 0, 0, 0.82);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -19,12 +20,15 @@
     margin: 0;
     position: absolute;
     right: 5%;
-    color: rgba(0, 0, 0, 0.82);
-    font-weight: bolder;
+    background: white;
+    color: #606c88;
     font-size: 25px;
     top: 2%;
+    border-radius: 5px;
+    font-weight: bolder;
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: overline;
+    text-decoration-color: #020202;
     
 }
 .one-time{
@@ -54,6 +58,7 @@
 .wash-main{
   position: relative;
     display: flex;
+    transform: perspective(61px) rotateY(1deg);
     flex-direction: column;
     height: 300px;
     width: 200px;
@@ -61,9 +66,8 @@
     padding: 2px;
     margin: 50px;
     border-radius: 20px;
-    box-shadow: 0px 1px 4px 4px rgba(255, 255, 255, 0.8);
+    box-shadow: -11px 3px 0px 0px rgba(255, 255, 255, 0.8);
     background: linear-gradient(to top, #abbaab, #ffffff);
-
 }
 .wash-header{
     position: relative;
@@ -175,7 +179,7 @@ left: 0;
   width: 75px;
   height: 75px;
   border-radius: 100%;
-  background: linear-gradient(to top, #1c0709, #e62823);
+  background: linear-gradient(to top, #ff0018, #e62823);
   box-shadow: -3px 3px 7px 3px #1c070991;
 }
 
