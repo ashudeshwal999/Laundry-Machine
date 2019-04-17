@@ -203,7 +203,7 @@ io.on('connection', function(socket){
           }
       }, 1000);   
 
-      count2=0;
+      count2=1;
     });
     
     socket.on('set time on server 3',function(data){
@@ -243,7 +243,7 @@ io.on('connection', function(socket){
           
 
       }, 1000);  
-      count3=0;
+      count3=1;
     });
     
   socket.on('disconnect', function(){

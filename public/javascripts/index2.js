@@ -71,17 +71,19 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
                     type: 'GET',
                     url: "https://laundry-machine.herokuapp.com/json/subscriber.json",
                     success:function(data){
-                     console.log(data);
-              
-                     data.forEach(element => {
-                      if(element.info.endpoint==sub.endpoint){
-                        $('#user-name').html("Hello "+element.name);
-                        flag=1;
-                      }  
+                     $(document).ready(function(){
+                      data.forEach(element => {
+                        if(element.info.endpoint==sub.endpoint){
+                          $('#user-name').html("Hello "+element.name);
+                          flag=1;
+                        }  
+                       });
+                       if(!flag)$('#user-name').html("Hello Anon");
+                       
+
                      });
-                     if(!flag)$('#user-name').html("Hello Anon");
-
-
+              
+                     
                     }
                     });
 
