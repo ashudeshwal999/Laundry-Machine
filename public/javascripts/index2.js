@@ -68,15 +68,6 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
             navigator.serviceWorker.register('sw.js')
             .then(function(swReg) {   
 
-
-                swReg.pushManager.getSubscription().then((hi)=>{
-                    console.log("see-");
-                    
-                    console.log(hi);
-                    
-                });
-
-
               
                 swReg.pushManager.subscribe({
                   userVisibleOnly:true,
@@ -114,6 +105,15 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   }
   else if(Notification.permission=='denied'){
     console.log("Notification-service-off");
+    navigator.serviceWorker.getRegistration().then((swReg)=>{
+      swReg.pushManager.getSubscription().then((sub)=>{
+          console.log(sub);
+          
+      });
+
+    } );
+     
+    
 
   
   }
