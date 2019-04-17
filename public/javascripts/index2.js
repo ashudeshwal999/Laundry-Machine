@@ -62,11 +62,22 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 
   if(Notification.permission=='granted'){
              
+  
+
 
             navigator.serviceWorker.register('sw.js')
             .then(function(swReg) {   
+
+
+                swReg.pushManager.getSubscription().then((hi)=>{
+                    console.log("see-");
+                    
+                    console.log(hi);
+                    
+                });
+
+
               
-                 
                 swReg.pushManager.subscribe({
                   userVisibleOnly:true,
                   applicationServerKey: applicationServerKey
