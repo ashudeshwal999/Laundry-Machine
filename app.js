@@ -70,7 +70,10 @@ app.use('/admin/notification', adminNotificationRouter);
 
 
 
-http.listen( process.env.PORT || 3000);
+http.listen( process.env.PORT || 3000,function(err){
+  console.log("listening");
+  
+} );
 
         
 
@@ -83,6 +86,14 @@ io.on('connection', function(socket){
       socket.on('admin online',function(){
             adminSocket=socket;
           adminFlag=1;
+      });
+
+      socket.on("give name",function(data){
+        subscriber_db.findOne({"info.endpoint":data.endpoint},function(err,doc4){
+              io.sockets.emit('take name',doc4.name);
+              
+              
+        });
       });
 
 

@@ -92,9 +92,6 @@ router.post('/add',function(req,res,next){
   let room =req.body.room;
   let endpoint =subscribe_obj.endpoint;
 
-
-     
-
   subscriber_db.findOne({ "info.endpoint":endpoint },function(err,doc){
     console.log("findOne-");
     if(!doc){
@@ -103,15 +100,6 @@ router.post('/add',function(req,res,next){
           room:room,
           info:subscribe_obj
       };
-      
-      fs.readFile('public/json/subscriber.json',function(err,data){
-          if(err)throw err;
-          let list= JSON.parse(data);
-          list.push(data_main)
-          fs.writeFile('public/json/subscriber.json',JSON.stringify(list,null,2),function(err){
-            if(err)throw err;
-          });
-      });
       
        subscriber_db.insertOne(data_main,function(err,doc3){
          console.log("Insert");
@@ -127,8 +115,24 @@ router.post('/add',function(req,res,next){
 });
 
 
- 
+router.post('/remove',function(req,res,next){
+  let subscribe_obj =req.body.subscribe;
+  let endpoint =subscribe_obj.endpoint;
+            
+  subscriber_db.deleteOne({"info.endpoint":endpoint },function(err,doc){   
+     console.log(doc);
+  });
+  
+
+  
+
 });
+
+
+
+
+});
+
 
 
 

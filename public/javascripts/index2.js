@@ -1,27 +1,121 @@
+if ('serviceWorker' in navigator && 'PushManager' in window) {
+
+
+
 const applicationServerPublicKey='BHYPy31teyZnhI5JPvCOw92cLEb70kXUY4tYcXrd3qxfdhLosziDKEbbFm0uW9XBp78SIcKzGjGcMeyGBazH-Q4';
 const applicationServerprivateKey='crVA3N79qpcWVqFJjnXFyZRH10ZOn8T3sU5rjC8QLJM';
 applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
-var subscribe_obj;
-var flag=0;
+var subscribe_obj ,isSubscribed=null,swRegistration;
 
 
-$(document).ready(function(){
-   $('#user-name').html("Hello Anon");
- });
 
 
-var img_tag=document.querySelector('img');
-img_tag.addEventListener('click',function(e){
-    if( (form_tag.style.display=='none' || form_tag.style.display=='') && flag==0 ){
+if(Notification.permission=='granted'){
+  navigator.serviceWorker.register('sw.js')
+  .then(function(swReg) {
+    swRegistration = swReg;
+    
+      initializeUI();
+  })
+  .catch(function(error) { throw error;    });
+  
+}
+else if(Notification.permission=='denied'){
+console.log("Notification-service-off");
+}
+else{
+Notification.requestPermission();
+}
+
+
+function initializeUI() {
+    
+  swRegistration.pushManager.getSubscription()
+  .then(function(subscription) {
+    isSubscribed = !(subscription === null);
+    subscribe_obj=subscription;
+    
+    updateBtn();
+  });
+
+  
+
+}
+
+var name_tag= document.querySelector('#user-name');
+
+function updateBtn() {
+  if(Notification.permission=='denied'){
+    name_tag.innerHTML="Notification Blocked"
+  return;
+}
+
+  if (isSubscribed) {
+    check_tag.checked=true;
+    socket.emit('give name',subscribe_obj);  
+    socket.on('take name',function(data){
+      name_tag.innerHTML="Hello "+data;
+    });
+
+  } else {
+    check_tag.checked=false;
+    name_tag.innerHTML="Hello Anon";
+  }
+
+}
+
+
+
+
+
+
+
+
+var check_tag=document.querySelector('.switch>input');
+check_tag.addEventListener('click',function(e){
+
+
+  if(Notification.permission=='denied'){
+      this.checked=false;
+    return;
+  }
+    
+
+    if( this.checked==true  ){
       form_tag.style.display='block';
       form_tag.style.opacity=1;
       document.querySelector('#user-name').style.display='none';
 
     }
-    else if(form_tag.style.display=='block' && flag==0){  
+    else if(this.checked==false ){  
       form_tag.style.display='none';
       form_tag.style.opacity=0;
       document.querySelector('#user-name').style.display='block';
+
+        swRegistration.pushManager.getSubscription()
+        .then(function(subscription) {
+          if (subscription) {
+            $.ajax({
+              url: '/remove',
+              type: 'POST',
+              contentType: 'application/json',
+              data: JSON.stringify({"subscribe":subscription}),
+            });
+            return subscription.unsubscribe();
+          }
+        })
+        .catch(function(error) {
+          console.log('Error unsubscribing', error);
+        })
+        .then(function() {
+          isSubscribed = false;
+          updateBtn();
+        });
+  
+    
+     
+      
+
     }
 
 });
@@ -37,92 +131,34 @@ form_tag.addEventListener('submit',function(e){
   let name = name_tag.value;
   let room = room_tag.value;
   
-                  $.ajax({
-                    url: '/add',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({"subscribe":subscribe_obj,"name":name ,"room":room}),
-                   
-                   
-                });
+                  
                 form_tag.style.display='none';
                 form_tag.style.opacity=0; 
                 location.reload();
-              
-                //$('#user-name').html("Hello "+name);  
+
+                
+      swRegistration.pushManager.subscribe({
+        userVisibleOnly:true,
+        applicationServerKey: applicationServerKey
+      }).then((sub)=>{
+        subscribe_obj=sub;
+
+        $.ajax({
+          url: '/add',
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify({"subscribe":subscribe_obj,"name":name ,"room":room}),
+      });
+
+
+
+      }).catch(function(error){ throw error; });
+      
+                
     
 });
 
-
-
-
-if ('serviceWorker' in navigator && 'PushManager' in window) {
-  
-  
-
-  if(Notification.permission=='granted'){
-             
-  
-
-
-            navigator.serviceWorker.register('sw.js')
-            .then(function(swReg) {   
-
-              
-                swReg.pushManager.subscribe({
-                  userVisibleOnly:true,
-                  applicationServerKey: applicationServerKey
-                }).then((sub)=>{
-                  subscribe_obj=sub;
-                  
-                  $.ajax({
-                    type: 'GET',
-                    url: "https://laundry-machine.herokuapp.com/json/subscriber.json",
-                    success:function(data){
-                     $(document).ready(function(){
-                      data.forEach(element => {
-                        if(element.info.endpoint==sub.endpoint){
-                          $('#user-name').html("Hello "+element.name);
-                          flag=1;
-                        }  
-                       });
-                       
-                       
-
-                     });
-              
-                     
-                    }
-                    });
-
-              
-                }).catch(function(error){ throw error; });
-            })
-            .catch(function(error) { throw error;    });
-
-            
-
-  }
-  else if(Notification.permission=='denied'){
-    console.log("Notification-service-off");
-    navigator.serviceWorker.getRegistration().then((swReg)=>{
-      swReg.pushManager.getSubscription().then((sub)=>{
-          console.log(sub);
-          
-      });
-
-    } );
-     
-    
-
-  
-  }
-  else{
-    Notification.requestPermission();
-  }
-    
-
-} 
+ 
     
 function urlB64ToUint8Array(base64String) {
   const padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -151,5 +187,7 @@ function urlB64ToUint8Array(base64String) {
 
 
 
+
+}
 
 
