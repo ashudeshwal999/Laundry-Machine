@@ -100,15 +100,16 @@ body{
   box-shadow: -3px 3px 7px 3px #1c070991;
 }
 
+
 .chat-popup {
   display: none;
   position: fixed;
   bottom: 0;
-  right: 3%ax;
+  right: 3%;
   border: 3px solid #f1f1f1;
   z-index: 9;
   border-radius: 10px;
-  background: white;
+  background:white;
 }
 
 
