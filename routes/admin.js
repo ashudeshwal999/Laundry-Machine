@@ -33,16 +33,11 @@ router.get('/', ensureAuthenticated, function(req,res,next){
 
 
   function ensureAuthenticated(req,res,next){
-     /* if(req.isAuthenticated()){
+      if(req.isAuthenticated()){
           return next();
       } 
       res.redirect('/login');
-      */
-     console.log("authentication");
-     
-     console.log(req.isAuthenticated());
-     
-     return next();
+       
   }
 
   

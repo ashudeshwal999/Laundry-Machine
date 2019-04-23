@@ -10,7 +10,7 @@ client.connect(err => {
 
 
         
-  router.get('/',function(req,res,next){
+  router.get('/',ensureAuthenticated,function(req,res,next){
 
     let date_ob= new Date();
     let day= date_ob.getDay(),month=date_ob.getMonth(),date=date_ob.getDate(),year=date_ob.getFullYear();
@@ -35,6 +35,13 @@ client.connect(err => {
     });
    
 });
+function ensureAuthenticated(req,res,next){
+    if(req.isAuthenticated()){
+        return next();
+    } 
+    res.redirect('/login');
+     
+}
                                              
         
 

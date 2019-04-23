@@ -8,11 +8,19 @@ client.connect(err => {
      const Admin = client.db("machine").collection("admin");
     
 
-router.get('/', function(req,res,next){    
+router.get('/',ensureAuthenticated, function(req,res,next){    
   
     res.render('account',{title:'Account',message:''});
    
   });
+
+  function ensureAuthenticated(req,res,next){
+    if(req.isAuthenticated()){
+        return next();
+    } 
+    res.redirect('/login');
+     
+}
 
   router.post('/', function(req,res,next){
     let oldAdminName=req.body.label1,

@@ -14,11 +14,18 @@ const update_db = client.db("machine").collection("update");
         
 
 
-router.get('/', function(req,res,next){    
+router.get('/', ensureAuthenticated,function(req,res,next){    
  
     res.render('record',{title:'Record',data:[] ,show:1,date:'' });
    
   });
+  function ensureAuthenticated(req,res,next){
+    if(req.isAuthenticated()){
+        return next();
+    } 
+    res.redirect('/login');
+     
+}
 
 
   router.post('/',function(req,res,next){
