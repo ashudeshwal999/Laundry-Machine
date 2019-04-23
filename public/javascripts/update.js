@@ -6,6 +6,8 @@ var no_of_click=0;
 
     $("#sortable1,#sortable2,#sortable3").sortable({
         connectWith: "#sortable1 , #sortable2,#sortable3",
+        handle: '.handle',
+        items: "li:not(.ui-state-disabled)",
         
         
         receive:function(event,ui){
@@ -18,8 +20,6 @@ var no_of_click=0;
                     item.querySelector('input').dataset.index=machine_id;
                 });
                 
-                
-
 
         },
 
@@ -90,6 +90,11 @@ var no_of_click=0;
                
     });
 
+
+
+
+
+
     
 });
 
@@ -99,6 +104,20 @@ var checkbox_list= document.querySelectorAll('input[type=checkbox]');
 
 checkbox_list.forEach((item,i)=>{
     item.addEventListener('click',function (e) {
+           
+        if(this.checked==false){
+            this.checked=true;
+            return;
+        }
+        /*
+         if(this.checked==true){
+            this.parentNode.classList.add("ui-state-disabled");
+        }
+        else{
+            this.parentNode.classList.remove("ui-state-disabled");
+        }
+        */
+                    
         let date_ob= new Date();
         let hour=date_ob.getHours(),minutes=date_ob.getMinutes();
         if(hour<10)hour='0'+hour;
@@ -124,6 +143,11 @@ checkbox_list.forEach((item,i)=>{
     
         
     })
+
+    
+    
+
+
 });
 
 

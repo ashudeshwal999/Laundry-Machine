@@ -56,8 +56,9 @@ left: 0;
 input[type=checkbox]{
     height: 12.8px;
     width: auto;
-    transform: scale(2);
-    margin: 0;
+    transform: scale(3);
+    
+
 }
 
 /* add-name*/
@@ -111,12 +112,12 @@ form{
     margin-right: 10px;
     background: white;
     border-radius: 20px;
-    color: black;
     outline: none;
 }
 .add-item {
     margin: 0;
     padding: 0;
+color: black;
     width: 40px;
     height: 40px;
     font-size: 35px;
@@ -153,3 +154,6 @@ form{
   ::-webkit-scrollbar-thumb {
     background: white;
   }
+
+
+  

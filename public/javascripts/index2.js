@@ -134,7 +134,7 @@ form_tag.addEventListener('submit',function(e){
                   
                 form_tag.style.display='none';
                 form_tag.style.opacity=0; 
-                location.reload();
+                
 
                 
       swRegistration.pushManager.subscribe({
@@ -151,6 +151,7 @@ form_tag.addEventListener('submit',function(e){
       });
 
 
+      location.reload();
 
       }).catch(function(error){ throw error; });
       
@@ -179,15 +180,5 @@ function urlB64ToUint8Array(base64String) {
 
 
 
-
-
-
-
-
-
-
-
-
 }
-
 

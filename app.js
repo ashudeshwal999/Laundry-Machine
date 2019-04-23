@@ -90,8 +90,11 @@ io.on('connection', function(socket){
 
       socket.on("give name",function(data){
         subscriber_db.findOne({"info.endpoint":data.endpoint},function(err,doc4){
+            if(doc4)
               io.sockets.emit('take name',doc4.name);
-              
+            else{
+              io.sockets.emit('take name',"Anon");
+            }  
               
         });
       });
@@ -295,13 +298,25 @@ function send_notification_machine(no,message,title){
             if(item == null) {
              
               cursor.toArray(function(err, items) { 
-                 
-                  items.forEach((send)=>{
-                    if(send['room']==next['room_no'])
-                    webpush.sendNotification(send['info'],JSON.stringify({'msg':send['name']+" "+message ,'title':title}));
-                    
-                  });
                   
+                  let isU=0;
+
+                  items.forEach((send)=>{
+                    if(send['room']==next['room_no']){
+                    webpush.sendNotification(send['info'],JSON.stringify({'msg':send['name']+" "+message ,'title':title}));
+                      isU++;
+                    }
+                  });
+
+                  // send all if no room matched
+                  if(!isU){
+
+                    items.forEach((send)=>{
+                      webpush.sendNotification(send['info'],JSON.stringify({'msg':send['name']+" "+message ,'title':title}));
+                    });
+                    
+                  }
+
                 
               });
             };

@@ -26,14 +26,20 @@
         <%if(machine1_name.length!=0){%>
         
           <%for(let i=0;i<machine1_name.length;i++){ %>
-              <li>
+              <li 
+              <% if(machine1_name[i]['done']){ %>
+                class="ui-state-default ui-state-disabled"
+              <%} else {%>
+                class="ui-state-default"
+              <%}%>
+              >
                 <input type="checkbox" data-index="1" data-name="<%= machine1_name[i]['name'] %> " 
                <% if(machine1_name[i]['done']){ %>
                   checked
                 <%}%>
                 data-no="<%=i%>"
                 >
-                <span> <%= machine1_name[i]['name']%> </span>
+                <span class="handle" > <%= machine1_name[i]['name']%> </span>
               </li>
 
          <%}%> 
@@ -49,14 +55,20 @@
           <%if(machine2_name.length!=0){%>
         
             <%for(let i=0;i<machine2_name.length;i++){ %>
-                <li >
+                <li 
+                <% if(machine2_name[i]['done']){ %>
+                  class="ui-state-default ui-state-disabled"
+                <%} else {%>
+                  class="ui-state-default"
+                <%}%>
+                >
                   <input type="checkbox" data-index="2" data-name="<%=machine2_name[i]['name'] %> "
                   <% if(machine2_name[i]['done']){ %>
                     checked
                   <%}%>
                   data-no="<%=i%>"
                   >
-                  <span> <%= machine2_name[i]['name']%> </span>
+                  <span class="handle" > <%= machine2_name[i]['name']%> </span>
                 </li>
   
            <%}%> 
@@ -76,14 +88,21 @@
               <%if(machine3_name.length!=0){%>
         
                 <%for(let i=0;i<machine3_name.length;i++){ %>
-                    <li >
+                    <li 
+                    <% if(machine3_name[i]['done']){ %>
+                      class="ui-state-default ui-state-disabled"
+                    <%} else {%>
+                      class="ui-state-default"
+                    <%}%>
+                    
+                    >
                       <input type="checkbox" data-index="3" data-name= "<%=machine3_name[i]['name']%>"
                       <% if(machine3_name[i]['done']){ %>
                         checked
                       <%}%>
                       data-no="<%=i%>"
                       >
-                      <span> <%= machine3_name[i]['name']%> </span>
+                      <span class="handle"> <%= machine3_name[i]['name']%> </span>
                     </li>
       
                <%}%> 
@@ -128,7 +147,9 @@
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>    
         <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>   
         
-    <script src="/javascripts/jquery.ui.touch-punch.min.js"></script>
+    
+    <script src="/javascripts/jquery.ui.touch-punch.js"></script>
+
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/javascripts/update.js"></script>
     
