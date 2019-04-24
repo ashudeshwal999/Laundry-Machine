@@ -68,6 +68,20 @@ function Rotate_it(){
 
 
 
+var noti_head=document.querySelector('#box-heading');
+
+noti_head.addEventListener('click',function(e){
+
+});
+
+
+$(document).ready(function() {
+    $('#box-heading').click(function(){
+        $('.notification-box').toggle();
+    });
+
+});
+
 
 
 

@@ -10,8 +10,28 @@
   
   </head>
   <body>
-    
-      <a href="/login" id='login'>Login</a>
+    <ul class="head">
+      
+      <li id="top-left">
+      <div class="notify-click">
+    <a id='box-heading'>Notification</a>  
+      <div class="notification-box">
+          <% if(notification_msg.length!=0) {   %>        
+                <%for(let i=0;i<notification_msg.length;i++){ %>
+                    <li >
+                        <span id="noti-span"><%= notification_msg[i]['time'] %></span>
+                      <p><%= notification_msg[i]['info'] %> </p>
+                      
+                    </li>
+                  <% } %>
+
+           <% } %>
+      </div> 
+    </div>
+  </li>
+
+
+    <li id="top-right">
       <div class="notify-gain">
           <form class="one-time" action="#" autocomplete="off">
               <label >Enter your full name</label>
@@ -24,23 +44,11 @@
            <label class="switch"><input type="checkbox" id="togBtn"><div class="slider round"></div></label>
 
     </div>
-      <div class="notification-box">
-          <span id='box-heading'>Notification-Box</span>  
-          
-          <% if(notification_msg.length!=0) {   %>        
-                <%for(let i=0;i<notification_msg.length;i++){ %>
-                    <li >
-                        <span id="noti-span"><%= notification_msg[i]['time'] %></span>
-                      <p><%= notification_msg[i]['info'] %> </p>
-                      
-                    </li>
-                  <% } %>
-
-           <% } %>
-          </div> 
+      <a href="/login" id='login'>Login</a> 
+    </li>
       
 
-
+    </ul>
     <div class="main">
     
 
