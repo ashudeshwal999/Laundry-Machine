@@ -63,7 +63,7 @@ color: #d4d4dc;
 }
 
 
-.notification-box{
+.notify-click>.notification-box{
   width: 300px;
     height: 150px;
     background: #d4d4dc;
@@ -78,7 +78,7 @@ color: #d4d4dc;
   
 }
 
-.notification-box > li{
+.notify-click>.notification-box > li{
   list-style: none;
   display: flex;
   width: 100%;
@@ -88,7 +88,7 @@ color: #d4d4dc;
   position: relative;
 }
 
-.notification-box > li>p{
+.notify-click>.notification-box > li>p{
   color: red;
     margin: 0;
     margin-left: 15px;
