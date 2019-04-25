@@ -54,6 +54,9 @@ function updateBtn() {
     check_tag.checked=true;
     socket.emit('give name',subscribe_obj);  
     socket.on('take name',function(data){
+      
+      console.log({data,subscribe_obj});
+      
       name_tag.innerHTML="Hello "+data;
     });
 

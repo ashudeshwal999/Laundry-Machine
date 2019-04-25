@@ -303,19 +303,14 @@ function send_notification_machine(no,message,title){
 
                   items.forEach((send)=>{
                     if(send['room']==next['room_no']){
+                      
+                    
                     webpush.sendNotification(send['info'],JSON.stringify({'msg':send['name']+" "+message ,'title':title}));
                       isU++;
                     }
                   });
 
-                  // send all if no room matched
-                  if(!isU){
-
-                    items.forEach((send)=>{
-                      webpush.sendNotification(send['info'],JSON.stringify({'msg':send['name']+" "+message ,'title':title}));
-                    });
-                    
-                  }
+                  
 
                 
               });
