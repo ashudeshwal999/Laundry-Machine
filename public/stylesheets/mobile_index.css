@@ -21,7 +21,7 @@ img{
   width: 48px;
   position: absolute;
   right: 0;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0, 1.28);
 }
 
 .head{
@@ -39,7 +39,7 @@ img{
   z-index: 10;
   border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 .head>li{
   display: inline-flex;
