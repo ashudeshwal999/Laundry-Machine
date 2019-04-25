@@ -29,3 +29,16 @@ form.addEventListener('submit',function(){
     
 });
 
+if(screen.width<500){
+    var side = document.querySelector('.side-item');
+    var menu =document.querySelector('img');
+    menu.addEventListener('click',function(e){
+        side.style.left="0";
+    });
+    var close= document.querySelector('.close');
+    close.addEventListener('click',function(e){
+        side.style.left='-100%';
+    });
+
+
+}
