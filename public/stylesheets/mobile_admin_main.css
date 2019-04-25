@@ -1,0 +1,54 @@
+.main2{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    height: 100%;
+}
+h2{
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+}
+
+.machine-timer-set{
+    margin: 0;
+    margin-left: 2px;
+    margin-right: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.controller{
+    padding: 0px;
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+    border-bottom-right-radius: 31px;
+    border-top-left-radius: 31px;
+    height: 70px;
+    background: white;
+    color: black;
+    outline: none;
+}
+
+.save-btn{
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: #1997c6;
+    font-weight: bolder;
+    outline: none;
+}
+.box{
+    font-size: 1.4em;
+    color: red;
+    font-weight: bolder;
+    margin-bottom: 2em;
+    padding: 10px;
+    background: white;
+    border-radius: 20px;
+}
