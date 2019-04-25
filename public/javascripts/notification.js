@@ -29,7 +29,7 @@ form.addEventListener('submit',function(){
     
 });
 
-if(screen.width<500){
+try{
     var side = document.querySelector('.side-item');
     var menu =document.querySelector('img');
     menu.addEventListener('click',function(e){
@@ -40,5 +40,7 @@ if(screen.width<500){
         side.style.left='-100%';
     });
 
+    }
+    catch(e){
 
-}
+    }

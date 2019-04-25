@@ -118,8 +118,8 @@ form{
     margin: 0;
     padding: 0;
 color: black;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     font-size: 35px;
     border-radius: 50%;
     cursor: pointer;
@@ -132,8 +132,8 @@ color: black;
 .add-item2 {
     margin: 0;
     padding: 0;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     font-size: 35px;
     border-radius: 50%;
     cursor: pointer;
@@ -155,5 +155,9 @@ color: black;
     background: white;
   }
 
-
+@media (max-width:500px){
+    .main2{
+        width: 100vw;
+    }
+}
   

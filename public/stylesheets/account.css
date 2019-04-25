@@ -38,3 +38,13 @@ h2{
     color: #1997c6;
     border: none;
 }
+
+@media (max-width: 500px) {
+    .account-reset {
+        justify-content: center;
+        align-items: center;
+        margin-top: 8vh;
+    }
+
+
+}
