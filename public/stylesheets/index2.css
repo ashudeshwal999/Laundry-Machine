@@ -58,8 +58,8 @@ color: #d4d4dc;
 
 .notify-click{
   text-align: center;
-  width: 300px;
   position: relative;
+  margin-left: 11px;
 }
 
 
@@ -73,7 +73,7 @@ color: #d4d4dc;
     margin-left: 5px;
     margin-top: 5px;
     display: none;
-    
+    z-index: 1;
     position: absolute;
   
 }

@@ -68,18 +68,29 @@ function Rotate_it(){
 
 
 
-var noti_head=document.querySelector('#box-heading');
-
-noti_head.addEventListener('click',function(e){
-
-});
-
 
 $(document).ready(function() {
     $('#box-heading').click(function(){
         $('.notification-box').toggle();
     });
+    
 
+});
+var click=0;
+
+var img_tag= document.querySelector('img');
+var head=document.querySelector('.head');
+img_tag.addEventListener('click',function(e){
+    if(click%2==0){
+        head.style.left="60%";
+        img_tag.style.transform="rotate(-90deg)";
+
+    }
+    else{
+        head.style.left="100%";
+        img_tag.style.transform="rotate(0deg)";
+    }
+    click++;
 });
 
 

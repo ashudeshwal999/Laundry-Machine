@@ -84,7 +84,7 @@ check_tag.addEventListener('click',function(e){
     if( this.checked==true  ){
       form_tag.style.display='block';
       form_tag.style.opacity=1;
-      document.querySelector('#user-name').style.display='none';
+      document.querySelector('#user-name').style.display='block';
 
     }
     else if(this.checked==false ){  
