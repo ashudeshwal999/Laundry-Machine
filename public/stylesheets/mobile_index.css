@@ -4,7 +4,7 @@
 html{
   width: 100vw;
   height: 150vh;
-  overflow: hidden;
+  
 }
 body{
   
@@ -15,6 +15,7 @@ body{
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow-x: hidden;
   
 }
 img{
