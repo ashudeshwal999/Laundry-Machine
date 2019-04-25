@@ -89,15 +89,18 @@ io.on('connection', function(socket){
       });
 
       socket.on("give name",function(data){
-        subscriber_db.findOne({"info.endpoint":data.endpoint},function(err,doc4){
+        
+        
+        subscriber_db.findOne({"info.endpoint":data.sub.endpoint},function(err,doc4){
             if(doc4)
-              io.sockets.emit('take name',doc4.name);
+              socket.emit('take name',doc4.name);
             else{
-              io.sockets.emit('take name',"Anon");
+              socket.emit('take name',"Anon");
             }  
               
         });
       });
+      
 
 
 

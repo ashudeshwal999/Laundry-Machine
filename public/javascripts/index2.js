@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator && 'PushManager' in window) {
 
-
+ 
 
 const applicationServerPublicKey='BHYPy31teyZnhI5JPvCOw92cLEb70kXUY4tYcXrd3qxfdhLosziDKEbbFm0uW9XBp78SIcKzGjGcMeyGBazH-Q4';
 const applicationServerprivateKey='crVA3N79qpcWVqFJjnXFyZRH10ZOn8T3sU5rjC8QLJM';
@@ -38,11 +38,11 @@ function initializeUI() {
     updateBtn();
   });
 
-  
 
 }
 
 var name_tag= document.querySelector('#user-name');
+var name_changed=0;
 
 function updateBtn() {
   if(Notification.permission=='denied'){
@@ -52,17 +52,21 @@ function updateBtn() {
 
   if (isSubscribed) {
     check_tag.checked=true;
-    socket.emit('give name',subscribe_obj);  
-    socket.on('take name',function(data){
-      
-      console.log({data,subscribe_obj});
-      
+    socket.emit('give name',{sub:subscribe_obj});  
+    socket.on('take name',function(data){  
+      if(!name_changed){
       name_tag.innerHTML="Hello "+data;
+        name_changed++;
+      }
     });
 
   } else {
     check_tag.checked=false;
-    name_tag.innerHTML="Hello Anon";
+    
+    if(!name_changed){
+      name_tag.innerHTML="Hello Anon";
+        name_changed++;
+      }
   }
 
 }
