@@ -43,6 +43,8 @@ listicon.forEach(item=> item.addEventListener('click',Rotate_it));
 
 
 function Rotate_it(){
+    console.log("yes");
+    
         let index_item=this.dataset.index-1;
          
     let {isListiconRotate ,listicon,student_list}=machine_ob[index_item];

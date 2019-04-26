@@ -538,7 +538,7 @@ input{
     background: linear-gradient(to top, #abbaab, #ffffff);
     margin: 0;
       margin-left: 2em;
-      z-index: -1;
+      z-index: 1;
   }
   .wash-header{
     position: relative;
