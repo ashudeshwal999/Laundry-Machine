@@ -76,6 +76,7 @@ textarea{
     top: 50%;
     background: transparent;
     padding: 1.5em;
+    overflow-y: auto;
 }
 
 
@@ -120,4 +121,9 @@ span{
         width: 4em;
         height: 4em;
     }
+    .notification-box {
+        width: 100vw;
+        height: 40vh;
+        overflow-y: auto;
+        border-radius: 20%;
 }

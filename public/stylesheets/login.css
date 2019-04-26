@@ -51,7 +51,7 @@ span{
     margin-top:10px;
     width: 200px;
     border-radius: 46px;
-    height: 30px;
+    height: 40px;
     border: none;
     color: white;
     background: linear-gradient(to top, #00c6ff, #0072ff);
@@ -61,4 +61,5 @@ span{
 }
 a{
     color: white;
+    font-size: 1.2em;
 }

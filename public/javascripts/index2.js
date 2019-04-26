@@ -1,3 +1,5 @@
+var check_tag=document.querySelector('.switch>input');
+
 if ('serviceWorker' in navigator && 'PushManager' in window) {
 
  
@@ -77,7 +79,7 @@ function updateBtn() {
 
 
 
-var check_tag=document.querySelector('.switch>input');
+
 check_tag.addEventListener('click',function(e){
 
 
@@ -185,6 +187,15 @@ function urlB64ToUint8Array(base64String) {
 
 
 
+
+}
+
+else{
+  check_tag.addEventListener('click',function(e){
+      check_tag.checked=false;
+      return;
+
+  });
 
 }
 

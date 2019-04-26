@@ -159,5 +159,12 @@ color: black;
     .main2{
         width: 100vw;
     }
+    .list {
+        
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 1em;
+        
+    }
 }
   
