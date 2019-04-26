@@ -85,6 +85,7 @@ var form_notify =document.querySelector('.one-time');
 
 img_tag.addEventListener('click',function(e){
     if(click%2==0){
+        head.style.display="flex";
         head.style.left="60%";
         img_tag.style.transform="rotate(-90deg)";
 
