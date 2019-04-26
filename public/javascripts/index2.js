@@ -52,6 +52,7 @@ function updateBtn() {
   return;
 }
 
+
   if (isSubscribed) {
     check_tag.checked=true;
     socket.emit('give name',{sub:subscribe_obj});  
@@ -130,8 +131,10 @@ check_tag.addEventListener('click',function(e){
 
 
 form_tag=document.querySelector('.one-time');
-form_tag.addEventListener('submit',function(e){
-  e.preventDefault();
+form_tag.addEventListener('submit',function(event){
+  event.preventDefault();
+  
+  
  
   var name_tag=document.querySelector('#notify-name');
   var room_tag=document.querySelector('#notify-room');
@@ -139,9 +142,8 @@ form_tag.addEventListener('submit',function(e){
   let name = name_tag.value;
   let room = room_tag.value;
   
-                  
-                form_tag.style.display='none';
-                form_tag.style.opacity=0; 
+        form_tag.style.display='none';
+        form_tag.style.opacity=0; 
                 
 
                 
@@ -150,7 +152,7 @@ form_tag.addEventListener('submit',function(e){
         applicationServerKey: applicationServerKey
       }).then((sub)=>{
         subscribe_obj=sub;
-
+        $('#user-name').html('Hello '+name);
         $.ajax({
           url: '/add',
           type: 'POST',
@@ -158,8 +160,9 @@ form_tag.addEventListener('submit',function(e){
           data: JSON.stringify({"subscribe":subscribe_obj,"name":name ,"room":room}),
       });
 
-
-      location.reload();
+       
+        isSubscribed=true;
+        
 
       }).catch(function(error){ throw error; });
       

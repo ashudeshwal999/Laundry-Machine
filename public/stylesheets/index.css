@@ -506,6 +506,7 @@ input{
   right: 100%;
   background: gray;
       border-radius: 25px;
+      z-index: 1;
   }
   
   

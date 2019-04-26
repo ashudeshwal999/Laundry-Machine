@@ -85,7 +85,8 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/add',function(req,res,next){
-
+  console.log("yess");
+  
   
   let subscribe_obj =req.body.subscribe;
   let name=req.body.name;
@@ -116,6 +117,8 @@ router.post('/add',function(req,res,next){
 
 
 router.post('/remove',function(req,res,next){
+  console.log("no");
+  
   let subscribe_obj =req.body.subscribe;
   let endpoint =subscribe_obj.endpoint;
             
