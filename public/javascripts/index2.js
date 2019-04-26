@@ -63,10 +63,9 @@ function updateBtn() {
   } else {
     check_tag.checked=false;
     
-    if(!name_changed){
+    
       name_tag.innerHTML="Hello Anon";
-        name_changed++;
-      }
+      
   }
 
 }

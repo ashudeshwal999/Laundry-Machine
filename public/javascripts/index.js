@@ -80,6 +80,9 @@ var click=0;
 
 var img_tag= document.querySelector('img');
 var head=document.querySelector('.head');
+var notify_box = document.querySelector('.notification-box');
+var form_notify =document.querySelector('.one-time');
+
 img_tag.addEventListener('click',function(e){
     if(click%2==0){
         head.style.left="60%";
@@ -89,6 +92,9 @@ img_tag.addEventListener('click',function(e){
     else{
         head.style.left="100%";
         img_tag.style.transform="rotate(0deg)";
+        notify_box.style.display='none';
+        form_notify.style.display='none';
+        
     }
     click++;
 });

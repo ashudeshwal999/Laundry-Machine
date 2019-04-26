@@ -450,7 +450,7 @@ input{
     padding: 0;
     display: flex;
     flex-direction: column-reverse;
-    background: #e01313;
+    background: linear-gradient(to right, #000000, #434343);
     width: 40vw;
     align-items: end;
     position: absolute;
@@ -479,7 +479,7 @@ input{
   
   #login{
     margin: 0;
-    background: #e01313;
+    background: transparent;
     color: white;
     font-size: 2em;
     width: 3em;
