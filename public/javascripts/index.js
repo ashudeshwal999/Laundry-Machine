@@ -91,6 +91,7 @@ img_tag.addEventListener('click',function(e){
     }
     else{
         head.style.left="100%";
+        head.style.display="none";
         img_tag.style.transform="rotate(0deg)";
         notify_box.style.display='none';
         form_notify.style.display='none';
