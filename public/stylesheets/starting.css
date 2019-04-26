@@ -144,3 +144,9 @@ li>a{
   ::-webkit-scrollbar-thumb {
     background: white;
   }
+
+  @media (max-width: 500px){
+    .student-list>li {
+    min-width: 15vw;
+    }
+  }

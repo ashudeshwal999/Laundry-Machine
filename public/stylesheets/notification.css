@@ -59,7 +59,7 @@ textarea{
     outline: none;
     border: none;
     background: white;
-    color: #1997c6;
+    color: red;
     font-weight: bolder;
     cursor: pointer;
 }
@@ -109,3 +109,15 @@ span{
     color: white;
 }
 
+@media (max-width: 500px){
+    #send-notifcation-btn {
+        font-size: 1.4em;
+    }
+    #send-btn{
+        font-size: 1.4em;
+    }
+    .cancel2{
+        width: 4em;
+        height: 4em;
+    }
+}

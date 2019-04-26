@@ -426,7 +426,7 @@ input{
   body{
     
     font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
-    background: linear-gradient(326deg, rgba(0,0,0,0) 47%, #000000 77%),linear-gradient(79deg, rgba(0,0,0,0) 78%, #b92828 64%);
+    background: linear-gradient(326deg, rgba(0,0,0,0) 47%, #000000 77%),linear-gradient(84deg, rgba(0,0,0,0) 64%, #b92828 64%);
     background-color: rgba(0, 0, 0, 0.82);
     margin: 0;
     display: flex;
