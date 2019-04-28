@@ -19,5 +19,5 @@ e.waitUntil(
 
 self.addEventListener('notificationclick', function (event) {
     event.notification.close();
-    clients.openWindow("http://localhost:3000");
+    clients.openWindow("https://laundry-machine.herokuapp.com/");
   });
