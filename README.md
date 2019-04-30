@@ -28,7 +28,6 @@ Right-side:-Mobile View
   
 ##Quick Start
 
-What things you need to install the software and how to install them
 
 ```
 # Install dependencies
