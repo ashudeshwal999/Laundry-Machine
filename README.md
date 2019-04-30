@@ -39,7 +39,7 @@ node app.js
 
 ## App Info
 
-###Features
+### Features
 
 <ul>
   <li>Admin Dashboard.</li>
