@@ -1,4 +1,5 @@
-var mongoose =require('mongoose');
+
+/*var mongoose =require('mongoose');
 
 mongoose.connect('mongodb://localhost/machine' ,{useNewUrlParser:true});
 
@@ -23,3 +24,5 @@ var userSchema = new schema({
 },{collection:'subscribe'} );
 
 var subscribe_db=module.exports=mongoose.model('subscribe',userSchema);
+
+*/

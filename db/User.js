@@ -1,4 +1,4 @@
-/*
+
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://admin:admin@laundry-gsdfb.mongodb.net/machine?retryWrites=true";
 const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -17,5 +17,3 @@ client.connect(err => {
 
 });
 
-
-*/
